@@ -1,0 +1,79 @@
+h1 {
+  text-align: center;
+  font-size: 56px;
+  font-family: sans-serif;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 27px;
+  font-family: sans-serif;
+  margin: 15px;
+  color: rgba(182, 24, 24, 0.941);
+}
+
+body {
+  background-color: rgba(242, 242, 11, 0.979);
+}
+
+.container {
+  width: 650px;
+  margin-left: 460px;
+  margin-top: -40px;
+  cursor: url(img/finishhammer1.png), auto;
+}
+
+.container:active {
+  cursor: url(img/finishhammer2.png), auto;
+}
+
+.tanah {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.tanah::after {
+  display: block;
+  content: "";
+  background: url(img/tanah2.png) bottom center no-repeat;
+  width: 200px;
+  height: 100px;
+  background-size: 80%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.monyet {
+  width: 100%;
+  height: 100%;
+  background: url(img/monyet.png) bottom center no-repeat;
+  background-size: 50%;
+  position: absolute;
+  top: 100px;
+  transition: top 0.3s;
+}
+
+.tanah.muncul .monyet {
+  top: -10px;
+}
+
+#button {
+  display: block;
+  font-size: 15px;
+  height: 30px;
+  width: 90px;
+  margin: auto;
+  margin-top: 470px;
+  margin-right: 715px;
+  border-radius: 16%;
+}
+
+#papan-waktu {
+  text-align: center;
+  font-size: 25px;
+}
