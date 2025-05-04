@@ -5,6 +5,8 @@ const papanSkor = document.querySelector(".papan-skor");
 const sound = document.querySelector("#sound");
 const backsound = document.querySelector("#backsound");
 const countdown = document.querySelector(".countdown");
+const leaderboard = document.querySelector("#leaderboard");
+let history = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
 let tanahbefore;
 let selesai;
@@ -27,6 +29,7 @@ function startCountdown() {
       selesai = true;
       backsound.pause();
       start.textContent = "Main Lagi!";
+      simpanSkorBaru(skor); // simpan skor ke history setelah waktu habis
     } else {
       seconds--;
     }
@@ -109,3 +112,28 @@ function pukul() {
 monyet.forEach((m) => {
   m.addEventListener("click", pukul);
 });
+
+function simpanSkorBaru(skor) {
+  const waktu = new Date().toLocaleString();
+  history.push({ skor, waktu });
+
+  // Urutkan dari skor tertinggi
+  history.sort((a, b) => b.skor - a.skor);
+
+  // Simpan hanya 5 skor tertinggi
+  history = history.slice(0, 5);
+
+  localStorage.setItem("leaderboard", JSON.stringify(history));
+  tampilkanLeaderboard();
+}
+
+function tampilkanLeaderboard() {
+  leaderboard.innerHTML = "";
+  history.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.skor} poin - ${item.waktu}`;
+    leaderboard.appendChild(li);
+  });
+}
+
+tampilkanLeaderboard();
