@@ -82,7 +82,7 @@ function munculkanMonyet() {
 }
 
 function mulai() {
-  console.log("Permainan dimulai!");
+  console.log("Permainan dimulai! rawrr!!");
   selesai = false;
   skor = 0;
   papanSkor.innerHTML = "score : " + 0;
