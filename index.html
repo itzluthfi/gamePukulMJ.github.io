@@ -11,33 +11,42 @@
 
     <p id="papan-waktu">Time : <span class="countdown">15 detik</span></p>
     <h2 class="papan-skor">score : 0</h2>
-    <div class="container">
-      <div class="tanah">
-        <div class="monyet"></div>
+
+    <div class="game-container">
+      <!-- Game board -->
+      <div class="container">
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
+        <div class="tanah">
+          <div class="monyet"></div>
+        </div>
       </div>
-      <div class="tanah">
-        <div class="monyet"></div>
-      </div>
-      <div class="tanah">
-        <div class="monyet"></div>
-      </div>
-      <div class="tanah">
-        <div class="monyet"></div>
-      </div>
-      <div class="tanah">
-        <div class="monyet"></div>
-      </div>
-      <div class="tanah">
-        <div class="monyet"></div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard-container">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard" class="leaderboard-list"></ol>
       </div>
     </div>
+
     <button type="button" id="button">Mulai!</button>
-    <h2>Leaderboard</h2>
-    <ol id="leaderboard" class="leaderboard-list"></ol>
 
     <audio src="audio/backsound2.mp3" id="backsound"></audio>
-
     <audio src="audio/pop.mp3" id="sound"></audio>
+
     <script src="script.js"></script>
   </body>
 </html>

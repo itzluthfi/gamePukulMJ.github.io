@@ -32,6 +32,38 @@ h2 {
   margin-bottom: 10px;
 }
 
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Jarak antara leaderboard dan game board */
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.leaderboard-container {
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-container h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.leaderboard-list {
+  text-align: left;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  font-size: 1rem;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -44,14 +76,6 @@ h2 {
 
 .container:active {
   cursor: url(img/finishhammer2.png), auto;
-}
-
-.leaderboard-list {
-  text-align: left;
-  max-width: 300px;
-  margin: 10px auto;
-  padding-left: 20px;
-  font-size: 1rem;
 }
 
 .tanah {
@@ -111,12 +135,32 @@ h2 {
     font-size: 1.1rem;
   }
 
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .leaderboard-container {
+    width: 100%;
+    max-width: 350px;
+  }
+
   .container {
     max-width: 90vw;
   }
 }
 
 @media (max-width: 480px) {
+  .game-container {
+    gap: 20px;
+  }
+
+  .leaderboard-container {
+    width: 100%;
+    max-width: 350px;
+  }
+
   .container {
     max-width: 95vw;
   }
