@@ -121,7 +121,7 @@ h2 {
   background-size: 50%;
   position: absolute;
   top: 100%;
-  transition: top 0.3s;
+  transition: top 0.5s;
 }
 
 .tanah.muncul .monyet {

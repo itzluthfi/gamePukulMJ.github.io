@@ -3,6 +3,8 @@ const monyet = document.querySelectorAll(".monyet");
 const start = document.querySelector("#button");
 const papanSkor = document.querySelector(".papan-skor");
 const sound = document.querySelector("#sound");
+const sound2 = document.querySelector("#sound2");
+
 const backsound = document.querySelector("#backsound");
 const countdown = document.querySelector(".countdown");
 const leaderboard = document.querySelector("#leaderboard");
@@ -30,7 +32,7 @@ function updateCountdown(seconds) {
 }
 
 function startCountdown() {
-  let seconds = 15;
+  let seconds = 20;
 
   countdownInterval = setInterval(() => {
     updateCountdown(seconds);
@@ -63,8 +65,13 @@ function randomWaktu(min, max) {
 
 function munculkanMonyet() {
   const random = tanahRandom(tanah);
-  const waktuRandom = randomWaktu(300, 700);
+  const waktuRandom = randomWaktu(400, 1500);
   random.classList.add("muncul");
+  // Atur ulang dan mainkan suara saat monyet muncul
+  sound2.pause(); // hentikan jika sedang dimainkan
+  sound2.currentTime = 0.3; // mulai dari awal
+  sound2.playbackRate = 1.5; // ubah kecepatan (1 = normal, >1 = cepat, <1 = lambat)
+  sound2.play();
   setTimeout(() => {
     random.classList.remove("muncul");
     if (!selesai) {
