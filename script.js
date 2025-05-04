@@ -14,6 +14,17 @@ let skor;
 let backsoundTimeout;
 let countdownInterval;
 
+const resetButton = document.querySelector("#resetLeaderboard");
+
+resetButton.addEventListener("click", () => {
+  // Menghapus leaderboard dari localStorage
+  localStorage.removeItem("leaderboard");
+
+  // Menampilkan leaderboard kosong
+  history = [];
+  tampilkanLeaderboard();
+});
+
 function updateCountdown(seconds) {
   countdown.textContent = seconds + " detik";
 }
